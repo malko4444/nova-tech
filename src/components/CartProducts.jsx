@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 const CartProducts = ({ onClose }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [cartitems, setCartItems] = useState(() => {
-    // Load initial cart items from localStorage
+    
     const storedItems = localStorage.getItem("cartItems");
     return storedItems ? JSON.parse(storedItems) : [];
   });
@@ -24,7 +24,7 @@ const CartProducts = ({ onClose }) => {
           ? prevItems
           : [...prevItems, newItem];
 
-        // Persist the updated cart in localStorage
+        
         localStorage.setItem("cartItems", JSON.stringify(updatedCart));
         return updatedCart;
       });
@@ -51,7 +51,7 @@ const CartProducts = ({ onClose }) => {
     setCartItems((prevItems) => {
       const filteredItems = prevItems.filter((item) => item.id !== itemId);
 
-      // Update localStorage with the filtered cart items
+      
       localStorage.setItem("cartItems", JSON.stringify(filteredItems));
       return filteredItems;
     });
@@ -82,7 +82,7 @@ const CartProducts = ({ onClose }) => {
               </div>
               <DeleteOutlined
                 className="cursor-pointer fixed right-4"
-                onClick={() => handleDeleteItem(item.id)} // Pass item id to handleDeleteItem
+                onClick={() => handleDeleteItem(item.id)} 
               />
             </div>
             

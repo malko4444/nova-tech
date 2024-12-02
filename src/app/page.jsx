@@ -14,7 +14,7 @@ export default function Home() {
   const [addpro, setAddPro] = useState(false);
 
   const [query, setquery] = useState("");
-  // const [login, setlogin] = useState(false);
+  
 
   const [Loginitem, setLoginItem] = useState(null);
 
@@ -27,7 +27,7 @@ export default function Home() {
   const logOutHandler = () => {
     localStorage.removeItem("selectedItem for login");
   };
-  // Function to handle data from child
+  
   const cartHandle = (item) => {
     localStorage.setItem("selectedItem for cart", JSON.stringify(item));
   };

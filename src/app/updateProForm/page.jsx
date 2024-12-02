@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export default function OtherPage() {
   const [item, setItem] = useState(null);
   const router = useRouter();
-  // Load the selected item from localStorage
+  
   useEffect(() => {
     const storedItem = localStorage.getItem("selectedItem for Update");
     if (storedItem) {
@@ -15,7 +15,7 @@ export default function OtherPage() {
     }
   }, []);
 
-  // Update handler for Firestore
+  
   const updateHandler = async () => {
     if (item?.id) {
       try {

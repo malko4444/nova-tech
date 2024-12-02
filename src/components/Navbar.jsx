@@ -8,7 +8,7 @@ import {
 import React, { useState, useEffect } from "react";
 import CartProducts from "./CartProducts";
 import Login from "./login/Login";
-
+// import img1 from "../../src/app/assets/nova.png"
 const Navbar = ({ setquery }) => {
   const [showCart, setShowCart] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
@@ -38,6 +38,7 @@ const Navbar = ({ setquery }) => {
           <h3 className="text-2xl font-bold text-orange-400 md:block">
             NOVATECH
           </h3>
+          // <img src="/nova.png" alt="imag" />
         ) : null}
         {showSearch || !isMobileView ? (
           <div className="md:absolute md:top-[50%] md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%] md:w-[400px]">

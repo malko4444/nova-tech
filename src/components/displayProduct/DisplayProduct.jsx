@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import { db } from "../../../config/firebase";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
-import Slider from "react-slick"; // Import React Slick
+import Slider from "react-slick"; 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -23,14 +23,14 @@ export default function DisplayProduct({ onUpdateHandle, cartHandle, query }) {
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.target.getBoundingClientRect();
-    const x = ((e.clientX - left) / width) * 100; // Calculate x position as a percentage
-    const y = ((e.clientY - top) / height) * 100; // Calculate y position as a percentage
+    const x = ((e.clientX - left) / width) * 100; 
+    const y = ((e.clientY - top) / height) * 100; 
     setPosition({ x, y });
   };
   const handleMouseLeave = () => {
-    setPosition({ x: 50, y: 50 }); // Reset to center (50% 50%)
+    setPosition({ x: 50, y: 50 }); 
   };
-  // State to hold the fetched products
+  
 
   const getProducts = async () => {
     try {
@@ -38,7 +38,7 @@ export default function DisplayProduct({ onUpdateHandle, cartHandle, query }) {
       const docs = await getDocs(collectionRef);
       let data = [];
       docs.forEach((doc) => {
-        data.push({ id: doc.id, ...doc.data() }); // Store document ID and data
+        data.push({ id: doc.id, ...doc.data() }); 
       });
       setProducts(data);
     } catch (error) {
@@ -62,7 +62,7 @@ export default function DisplayProduct({ onUpdateHandle, cartHandle, query }) {
     getProducts();
   }, []);
 
-  // Slider settings
+  
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -108,7 +108,7 @@ export default function DisplayProduct({ onUpdateHandle, cartHandle, query }) {
                   alt="Product Image 2"
                   style={{
                     transformOrigin: `${position.x}% ${position.y}%`,
-                    // transform: "scale(2)", // Adjust the zoom level here
+                    
                   }}
                 />
               </div>
@@ -122,7 +122,7 @@ export default function DisplayProduct({ onUpdateHandle, cartHandle, query }) {
                   alt="Product Image 3"
                   style={{
                     transformOrigin: `${position.x}% ${position.y}%`,
-                    // transform: "scale(2)", // Adjust the zoom level here
+                    
                   }}
                 />
               </div>
@@ -162,7 +162,7 @@ export default function DisplayProduct({ onUpdateHandle, cartHandle, query }) {
               </div>
             ) : null}
           </div>
-          // </div>
+          
         ))}
     </div>
   );

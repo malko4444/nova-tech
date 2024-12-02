@@ -7,7 +7,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 export default function Login({onClose}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const router = useRouter();
+  
   const modelref = useRef();
   const CloseModel = (e) => {
     if (modelref.current === e.target) {
